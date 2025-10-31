@@ -4,29 +4,43 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
+    backgroundColor: "ghostwhite",
     alignItems: "center",
     justifyContent: "space-around",
-    backgroundColor: "ghostwhite",
     ...Platform.select({
-      ios: { paddingTop: 20 },
+      ios: { paddingTop: 40 },
       android: { paddingTop: StatusBar.currentHeight },
     }),
   },
 
   box: {
-    width: 300,
     height: 100,
+    width: 100,  // Fixed height and width for boxes
     justifyContent: "center",
-    alignSelf: "stretch",
     alignItems: "center",
-    backgroundColor: "lightgray",
     borderWidth: 1,
     borderStyle: "dashed",
     borderColor: "darkslategray",
+    backgroundColor: "lightgray",
   },
 
   boxText: {
     color: "darkslategray",
     fontWeight: "bold",
+  },
+
+  row: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignSelf: "stretch",
+  },
+
+  column: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
+    alignSelf: "stretch",  // Rows and columns stretch to fill container (while boxes have fixed size)
   },
 });
